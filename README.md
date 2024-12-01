@@ -17,7 +17,7 @@ Automatically gather data about completed, in-progress, and blocked tasks during
 - Highlights successful tasks or aspects of the sprint and  summarizes blockers or issues faced.
 
 - Retrospective insights: Provides recommendations and actionable insights for future sprints.
-- 
+
 - The sprint summary provides detailed information about the issues at each stage, along with their corresponding percentage distribution.
 
 #### Slack Integration
