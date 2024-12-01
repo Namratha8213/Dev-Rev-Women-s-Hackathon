@@ -79,7 +79,7 @@ The user configures the snap-in by providing:
 ```bash
 git clone https://github.com/Namratha8213/Dev-Rev-Women-s-Hackathon.git
  
-cd sprint-summarization-snapin
+cd Dev-Rev-Women-s-Hackathon
 ```
 #### 2. Set Up the Snap-In
 
