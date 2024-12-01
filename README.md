@@ -106,33 +106,47 @@ cd Dev-Rev-Women-s-Hackathon
 
 ### Deploying Snap-ins
 
-Once you are done with the testing, run the following commands to deploy your snap-in:
+Once you are done with the setting up the code, run the following commands to deploy your snap-in:
+1. Navigate to code folder and run the following three commands
+``` bash
+npm  install
 
-1. Authenticate to devrev CLI, run the following command:
+npm run build
+
+npm run package
+```
+
+2. Authenticate to devrev CLI, run the following command:
 
 ```
 devrev profiles authenticate --org <devorg name> --usr <user email>
 ```
 
-2. To create a snap_in_version, run the following command:
+3. To create a snap_in_package , run the following command:
+
+``` 
+devrev snap_in_package create-one --slug my-first-snap-in | jq .
+```
+
+4. To create a snap_in_version, run the following command:
 
 ```
 devrev snap_in_version create-one --path <template path> --create-package
 ```
 
-3. Draft the snap_in, run the following command:
+5. Draft the snap_in, run the following command:
 
 ```
 devrev snap_in draft
 ```
 
-4. To update the snap-in, run the following command:
+6. To update the snap-in, run the following command:
 
 ```
 devrev snap_in update
 ```
 
-5. Activate the snap_in
+7. Activate the snap_in
 
 ```
 devrev snap_in activate
