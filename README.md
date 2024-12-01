@@ -47,7 +47,7 @@ The user configures the snap-in by providing:
   
 #### 2. Triggering the Summary Generation
 
-- The user navigates to any issue in the sprint and enters the command name in the discussion surface of the DevRev platform.
+- The user navigates to any issue in the sprint and enters the command name in the discussion surface of the issue in the  DevRev platform.
   
 - This triggers the function that fetches sprint details using the DevRev endpoint.
   
