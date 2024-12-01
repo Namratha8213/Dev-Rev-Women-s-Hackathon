@@ -69,7 +69,7 @@ The user configures the snap-in by providing:
 ## Installation and Usage
 ### Prerequisites
 - A DevRev account and snap-in access.
-- Genrate PAT and SLACK_API_TOKEN.
+- Generate PAT and SLACK_API_TOKEN.
 - Slack workspace with a channel to post sprint summaries.
 
 ### Steps
