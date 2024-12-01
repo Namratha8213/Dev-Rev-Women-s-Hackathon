@@ -59,9 +59,9 @@ The user configures the snap-in by providing:
 #### 4. Summary Generation
 
 - The sprint summary evaluates:
-- Issues in various stages.
-- Percentage of issues at each stage.
-- Insights into "What went well" and "What went wrong" at each stage.
+  - Issues in various stages.
+  - Percentage of issues at each stage.
+  - Insights into "What went well" and "What went wrong" at each stage.
 #### 5. Posting to Slack
 
 - The summary is posted to the configured Slack channel.
