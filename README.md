@@ -1,3 +1,100 @@
+# Snap-In for Sprint Summarization
+### Objective
+This project automates the process of generating a sprint summary at the end of each sprint and delivers it to a specified Slack channel. The summary highlights key sprint details, including:
+
+- What went well
+
+- What went wrong
+
+- Actionable insights for future sprints
+
+### Core Features
+#### Sprint Overview Generation
+
+Automatically gather data about completed, in-progress, and blocked tasks during the sprint using DevRev's API.
+#### Summarization
+
+- What went well: Highlights successful tasks or aspects of the sprint.
+
+- What went wrong: Summarizes blockers or issues faced.
+
+- Retrospective insights: Provides recommendations and actionable insights for future sprints.
+
+#### Slack Integration
+
+Posts the sprint summary to a user-configured Slack channel using the Slack API.
+
+### Tools and Technologies
+#### APIs:
+- DevRev for sprint data tracking (${endpoint}/works.list?type=issue).
+  
+- Slack for sending sprint summaries.
+#### Languages:
+- TypeScript.
+#### Platform: 
+- DevRev snap-in platform.
+
+### Workflow
+#### 1. Snap-In Configuration
+
+The user configures the snap-in by providing:
+
+- Sprint ID: The ID of the sprint to summarize.
+  
+- Slack Channel ID: The target channel where the summary will be posted.
+  
+- This configuration ensures flexibility and user-specific setup.
+  
+#### 2. Triggering the Summary Generation
+
+- The user navigates to any issue in the sprint and enters the command name in the discussion surface of the DevRev platform.
+  
+- This triggers the function that fetches sprint details using the DevRev endpoint.
+  
+#### 3. Data Fetching and Validation
+
+- The function collects sprint details, checking the provided Sprint ID and Slack Channel ID in the snap-in configuration.
+  
+- If validated, the system processes the sprint data to generate the summary.
+#### 4. Summary Generation
+
+- The sprint summary evaluates:
+- Issues in various stages.
+- Percentage of issues at each stage.
+- Insights into "What went well" and "What went wrong" at each stage.
+#### 5. Posting to Slack
+
+- The summary is posted to the configured Slack channel.
+
+## Installation and Usage
+### Prerequisites
+- A DevRev account and snap-in access.
+- Genrate PAT and SLACK_API_TOKEN.
+- Slack workspace with a channel to post sprint summaries.
+
+### Steps
+#### 1. Clone the Repository
+
+
+```bash
+git clone https://github.com/Namratha8213/Dev-Rev-Women-s-Hackathon.git
+ 
+cd sprint-summarization-snapin
+```
+#### 2. Set Up the Snap-In
+
+- Configure the snap-in by providing:
+   -  Sprint ID
+   -  Slack Channel ID
+#### 3. Trigger Summary Generation
+
+- Go to any sprint issue on the DevRev platform.
+- Use the  discussion surface and trigger the function with the command name.
+#### 4. Review the Summary
+
+- The sprint summary will be generated and posted to the specified Slack channel.
+
+  
 ## DevRev Snaps TypeScript Template
 
 This repository contains a template for the functions that can be deployed as
@@ -5,40 +102,13 @@ part of Snap-Ins.
 
 For reference on snap-ins, refer to the [documentation](https://github.com/devrev/snap-in-docs).
 
+## Documentation help
 ### Getting started with the template
 
 1. Create a new repository using this template.
 2. In the new repository, you can add functions at the path `src/functions` where the folder name corresponds to the function name in your manifest file.
 3. Ensure to include each new function in the file named "src/function-factory.ts".
 
-### Testing locally
-
-To test your code locally, add test events under 'src/fixtures' following the example event provided. Additionally, you can include keyring values in the event payload to test API calls.```
-
-After adding the event, execute the following commands to test your code:
-
-```
-npm install
-npm run start -- --functionName=on_work_creation --fixturePath=on_work_created_event.json
-```
-
-### Adding external dependencies
-
-You can also add dependencies on external packages to package.json under the “dependencies” key. These dependencies will be made available to your function at runtime and during testing.
-
-### Linting
-
-To check for lint errors, run the following command:
-
-```bash
-npm run lint
-```
-
-To automatically fix fixable lint errors, run:
-
-```bash
-npm run lint:fix
-```
 
 ### Deploying Snap-ins
 
@@ -74,55 +144,8 @@ devrev snap_in update
 devrev snap_in activate
 ```
 
-### Testing Snap-in changes locally
 
-### Setting up the server
 
-To test out changes in snap-in locally, developers can create a snap-in version in test mode.
-A snap-in version created in test mode enables developers to specify a public HTTP URL to receive events from DevRev. This makes for
-quick code changes on the local machine without needing to repeatedly deploy the snap-in again for testing the changes.
-
-To test out a snap-in version locally, follow the below steps:
-
-1. Run a server locally to ingest events from DevRev. The `port` parameter is optional. If not set, the server starts default on `8000`.
-
-```
-npm run test:server -- --port=<PORT>
-```
-
-2. Expose the local port as a publicly available URL. We recommend using [`ngrok`](https://ngrok.com/download) since it is free and easy to set up. The command for running ngrok tunnelling on port `8000`:
-
-```
-ngrok http 8000
-```
-
-This returns a public HTTP URL.
-
-3. Create a snap-in version with the `testing-url` flag set
-
-```
-devrev snap_in_version create-one --path <template path> --create-package --testing-url <HTTP_URL>
-```
-
-Here, `HTTP_URL` is the publicly available URL from Step 2. The URL should start with `http` or `https`
-
-4. Once the snap-in version is ready, create a snap-in, update and activate it.
-
-```
-devrev snap_in draft
-```
-
-Update the snap-in through UI or using the CLI:
-
-```
-devrev snap_in update
-```
-
-Activate the snap-in through UI or through the CLI command:
-
-```
-devrev snap_in activate
-```
 
 ### Receiving events locally
 
