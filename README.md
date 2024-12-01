@@ -33,7 +33,7 @@ Posts the sprint summary to a user-configured Slack channel using the Slack API.
 
 ### Tools and Technologies
 #### APIs:
-- DevRev for sprint data tracking (${endpoint}/works.list?type=issue).
+- DevRev for sprint data tracking (https://api.devrev.ai/works.list?type=issue).
   
 - Slack for sending sprint summaries.
 #### Languages:
