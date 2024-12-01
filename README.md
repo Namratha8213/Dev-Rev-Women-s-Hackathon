@@ -25,7 +25,7 @@ Automatically gather data about completed, in-developement,prioratised ,won't fi
 
 Posts the sprint summary to a user-configured Slack channel using the Slack API.
 
-#### Usage of a devrev feature - commands
+#### Usage of a DevRev feature - commands
 - Commands are used for triggering the snapin created.
 
 #### Customizable Configuration for Users
