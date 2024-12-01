@@ -11,7 +11,7 @@ This project automates the process of generating a sprint summary at the end of 
 ### Core Features
 #### Sprint Overview Generation
 
-Automatically gather data about completed, in-progress, and blocked tasks during the sprint using DevRev's API.
+Automatically gather data about completed, in-developement,prioratised ,won't fix and duplicates stages of issue during the sprint using DevRev's API.
 #### Summarization
 
 - Highlights successful tasks or aspects of the sprint and  summarizes blockers or issues faced.
@@ -19,6 +19,7 @@ Automatically gather data about completed, in-progress, and blocked tasks during
 - Retrospective insights: Provides recommendations and actionable insights for future sprints.
 
 - The sprint summary provides detailed information about the issues at each stage, along with their corresponding percentage distribution.
+
 
 #### Slack Integration
 
