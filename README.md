@@ -94,13 +94,7 @@ cd sprint-summarization-snapin
 
 - The sprint summary will be generated and posted to the specified Slack channel.
 
-  
-## DevRev Snaps TypeScript Template
 
-This repository contains a template for the functions that can be deployed as
-part of Snap-Ins.
-
-For reference on snap-ins, refer to the [documentation](https://github.com/devrev/snap-in-docs).
 
 ## Documentation help
 ### Getting started with the template
