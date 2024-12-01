@@ -59,6 +59,7 @@ The user configures the snap-in by providing:
 - This triggers the function that fetches sprint details using the DevRev endpoint.
   
 #### 3. Data Fetching and Validation
+- Initially, the system retrieves all issue details. From this data, it filters and identifies the issues associated with the sprint specified by the user, ensuring only relevant details are fetched.
 
 - The function collects sprint details, checking the provided Sprint ID and Slack Channel ID in the snap-in configuration.
   
